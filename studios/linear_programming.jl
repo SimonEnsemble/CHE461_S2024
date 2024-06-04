@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.42
+# v0.19.40
 
 using Markdown
 using InteractiveUtils
@@ -48,15 +48,37 @@ md"🍺 let's define some variables that contain this data for later use."
 
 # ╔═╡ d95c0541-047f-4ece-bb12-43cc825d6a3d
 # list of resources
+resources = ["corn", "hops", "malt"]
 
 # ╔═╡ 0f41fca8-fffc-41a2-8bf6-f07894a9c00c
 # list of brews
+brews = ["ale", "lager"]
 
 # ╔═╡ b35a803a-e611-43e2-a46e-153c0a3af8fd
 # amount of resources we have
+our_resources = Dict(
+	"corn" => 480.0, # kg
+	"hops" => 160.0, # kg
+	"malt" => 1190.0 # kg
+)
 
 # ╔═╡ 4768889e-12f1-4506-a8fb-9206d110fd68
 # resource requirements for producing ale and lager
+resource_requirements = Dict(
+	"ale" => Dict(
+		"corn" => 5.0,
+		"hops" => 4.0,
+		"malt" => 35.0
+	),
+	"lager" => Dict(
+		"corn" => 15.0,
+		"hops" => 4.0,
+		"malt" => 20.0
+	)
+)
+
+# ╔═╡ 6990c5a3-1996-4438-9ca1-30d929ddd544
+resource_requirements["lager"]["corn"]
 
 # ╔═╡ 6b59850d-01ea-44f2-86bc-578866d5efc2
 # profits from producing ale and lager
@@ -81,7 +103,7 @@ md"💡 devoting all of our resources to ale, we'd produce X barrels of ale and 
 "
 
 # ╔═╡ 6d69d2d9-e470-4b1c-bc7b-b07319b0dac4
-md"🍺 if our brewery were to devote all of its resources to beer production, how much profit would we make? how much corn, hops, and malt would we have leftover?"
+md"🍺 if our brewery were to devote all of its resources to lager production, how much profit would we make? how much corn, hops, and malt would we have leftover?"
 
 # ╔═╡ 3af1729f-1d00-4c33-87c8-76a65444b534
 
@@ -244,6 +266,7 @@ the profit we'll make from producing ale and lager is subject to uncertainty bec
 # ╠═0f41fca8-fffc-41a2-8bf6-f07894a9c00c
 # ╠═b35a803a-e611-43e2-a46e-153c0a3af8fd
 # ╠═4768889e-12f1-4506-a8fb-9206d110fd68
+# ╠═6990c5a3-1996-4438-9ca1-30d929ddd544
 # ╠═6b59850d-01ea-44f2-86bc-578866d5efc2
 # ╟─48d41db7-bf31-4dd5-860a-0862b4282227
 # ╟─f14b1ccf-4ca8-4444-b0c5-f1181d26173e
